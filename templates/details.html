@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin-top:70px">
+              <img src="{{movie.img.url}}" style="width:450px;">
+        </div>
+        <div class="col-md-6">
+            {{movie.id}}.<h3 style="color:white;font-family:Times new roman;">{{movie.name}}</h3><br>
+            <p style="color:white;font-family:Times new roman;font-size:20px;">{{movie.desc}}</p>
+            <p style="color:white;font-family:Times new roman;">Year: {{movie.year}}</p>
+            <a class="btn btn-warning" href="{% url 'moviesapk:update' movie.id %}" >UPDATE</a>
+            <a class="btn btn-danger" href="{% url 'moviesapk:delete' movie.id %}">DELETE</a>
+        </div>
+   </div>
+</div>
+
+
+{% endblock %}

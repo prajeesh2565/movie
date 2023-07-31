@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row" style="margin-top:35px;">
+        {% for i in movie_list %}
+        <div class="col-md-3">
+            <div class="card-deck h-100">
+              <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap"  height="225">
+              <div class="card-body">
+                <h5 class="card-title" style="color:white;">{{i.name}}</h5>
+                <p class="card-text" style="color:white;">Year:{{i.year}}</p>
+                <a href="{% url 'moviesapk:details' i.id %}" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+<!--<a  class="btn btn-warning" href="{% url 'moviesapk:add_movies' %}">ADD</a>-->
+{% endblock %}
